@@ -144,7 +144,7 @@ var formularioIniciado = false;
    function redirec() {
     setTimeout(function() {
         location.href = 'https://laclinicadental.org/';
-    }, 2000); // 4000 milisegundos = 4 segundos
+    }, 4000); // 4000 milisegundos = 4 segundos
 }
 
 
