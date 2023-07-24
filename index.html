@@ -6,31 +6,31 @@
     <meta name="viewport">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <style>
-    body {
-        background-color: #A9CCE3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
+  body {
+    background-color: #A9CCE3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh; /* Usamos 100vh para establecer el 100% de la altura de la pantalla */
+    background: linear-gradient(135deg, #FEDCE0, #96C9FF);
+}
+.same-size {
+    width: 658px; /* Ancho específico de 658 píxeles */
+    height: 500px; /* Alto específico de 500 píxeles */
+    display: block; /* Hacer que la imagen sea un bloque para evitar problemas de alineación */
+    margin: auto; /* Centrar horizontalmente la imagen */
+}
+.container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-    .container {
-        max-width: 600px;
-        width: 100%;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
 
-      /* Estilo para todas las imágenes */
-      img {
-        border-radius: 5px; /* Añade bordes redondeados a todas las imágenes */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Agrega una sombra a las imágenes */
-        max-width: 100%; /* Asegura que las imágenes no excedan su ancho original */
-        height: auto; /* Mantiene la proporción de aspecto de las imágenes */
-    }
 
 </style>
 
@@ -56,12 +56,12 @@
      <div class="container">
         <div class="modal-body">
                     <div class="text-center">
-                        <img id="imagen-clinica" src="https://lh3.googleusercontent.com/p/AF1QipMgwmpYzVPcQi143zEV9IIgSCLM_b4MIORJbJK8=s680-w680-h510" alt="Clínica Dental" class="img-fluid">
+                        <img id="imagen-clinica" src="https://lh3.googleusercontent.com/p/AF1QipMgwmpYzVPcQi143zEV9IIgSCLM_b4MIORJbJK8=s680-w680-h510" alt="Clínica Dental" class="img-fluid" width="658" height="500">
                         <p id="mensaje" class="mt-3 mb-4" style="font-family: 'Montserrat', sans-serif;">Seguira algunas preguntas que ayudarán al Dr. Virtual a dar una recomendación sobre las opciones de tratamiento.</p>
                         <button id="btn-empezar" class="btn btn-outline-info" onclick="empezarFormulario()">Empezar</button>
                     </div>
 					
-				 <form id="formulario"  method='POST' action='https://glowclinic.com.mx/' enctype="multipart/form-data">
+				 <form id="formulario"  method='POST' action='https://laclinicadental.org/' enctype="multipart/form-data">
                         <div id="pregunta1" class="d-none" style="font-family: 'Montserrat', sans-serif;">
                             <div class="form-group">
                                 <label for="name">1) ¿Como te llamas?</label>
@@ -199,7 +199,7 @@
                         <div id="pregunta8" class="d-none" style="font-family: 'Montserrat', sans-serif;">
                             <div class="form-group">
                                 <label for="subefoto"><strong>8) Sube una foto de tu sonrisa, mostrando tus dientes, para que el Dr. Virtual 🥼 pueda evaluarte y darte algunos consejos:</strong></label>
-								<img src="https://cdn.create.vista.com/api/media/medium/65208515/stock-photo-closeup-of-a-womans-beautiful?token=" alt="Ejemplo sonrisa" style="display: block; margin: auto;">
+								<img src="https://cdn.create.vista.com/api/media/medium/167552464/stock-photo-woman-with-healthy-teeth?token=" alt="Ejemplo sonrisa" class="img-fluid" style="max-width: 100%; height: auto; display: block; margin: auto;" width="658" height="500">
 								<p style="text-align: center;"> Aqui un ejemplo de la foto que se debe subir</p>
                                 <p><em>*Es opcional puedes pasarte esta pregunta</em></p>
                                 <div class="input-group mb-3">
@@ -216,7 +216,7 @@
 
                         <div id="pregunta9" class="d-none" style="font-family: 'Montserrat', sans-serif;">
                             <div class="mb-3">
-									<img src="https://laclinicadental.org/wp-content/uploads/2020/06/blog_laclinica_2.jpg" alt="Ejemplo sonrisa" style="display: block; margin: auto;">
+                                <img src="https://laclinicadental.org/wp-content/uploads/2020/06/blog_laclinica_2.jpg" alt="Ejemplo sonrisa" style="display: block; margin: auto; max-width: 100%; height: auto;" width="658" height="500">
 								<br>
                                 <label for="exampleFormControlTextarea1" class="form-label">9) ¿Algo que no te hayamos preguntado sobre tu sonrisa o inquietudes que sea importante para ti? </label>
                                  <textarea class="form-control" id="inquietudes" name="inquietudes" rows="3" value=" ¿Algo que no te hayamos preguntado sobre tu sonrisa o inquietudes que sea importante para ti?" required></textarea>
@@ -226,8 +226,8 @@
                         </div>
 
                         <div id="pregunta10" class="d-none" style="font-family: 'Montserrat', sans-serif;">
-                            <div class="form-group">
-								<img src="https://laclinicadental.org/wp-content/uploads/2020/06/laclinica_3.jpg" alt="Ejemplo sonrisa" style="display: block; margin: auto;">
+                            <div class="form-group img-fluid">
+								<img src="https://laclinicadental.org/wp-content/uploads/2020/06/laclinica_3.jpg" alt="Ejemplo sonrisa" style="display: block; margin: auto;"  class="img-fluid">
                                 <br>
 								<label for="estoyinteresado">10) Me gustaría tener una cita:</label>
                                 <select class="form-control" id="estoycita" name="estoycita" required>
@@ -241,7 +241,7 @@
 					   		 <button type="button" class="btn btn-primary" onclick="mostrarPregunta2('pregunta9', 'pregunta10')">Atrás</button>
                             <button type="button" class="btn btn-primary" onclick="mostrarPregunta('pregunta10', 'pregunta11')">Siguiente</button>
                         </div>
-
+                        
 
                         <div id="pregunta11" class="d-none" style="font-family: 'Montserrat', sans-serif;">
                             <div class="form-group">
@@ -254,13 +254,9 @@
 								<p>⬇️ Enviar</p>
 															
                             </div>
-							<!--button type="button" class="btn btn-success" onclick="mostrarAlerta(), enviarFormulario, location.reload();">Enviar</button-->
 						
-							<button type="submit" class="btn btn-success" onclick="enviarFormulario();">Enviar</button>
+							<button type="submit" class="btn btn-success" onclick="enviarFormulario(), mostrarAlerta();">Enviar</button>
 	          
-							<!--button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Enviar</button--->
-
- 							 <!--button type="submit" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Enviar</button--->	
                         </div>
                     </form>
                 </div>
