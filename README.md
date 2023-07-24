@@ -1,1 +1,1 @@
-#Proyecto para la clínica dental
+Proyecto para la clínica dental
