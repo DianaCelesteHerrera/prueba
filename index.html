@@ -4,36 +4,37 @@
     <title>Haz la prueba de la sonrisa</title>
     <meta name="viewport">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <style>
-     body {
-    background-color: #A9CCE3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    height: 100vh; /* Usamos 100vh para establecer el 100% de la altura de la pantalla */
-    background: linear-gradient(135deg, #FEDCE0, #96C9FF);
-}
+<style>
+        body {
+            background-color: #A9CCE3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0; /* Eliminamos el relleno para evitar espacios adicionales */
+            height: 100vh;
+            /* Usamos 100vh para establecer el 100% de la altura de la pantalla */
+            background: linear-gradient(135deg, #FEDCE0, #96C9FF);
+        }
 
-    
-.container {
-    width: 100%;
-    max-width: 600px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
 
-/* Regla CSS para versiones móviles */
-@media (max-width: 767px) {
-.container {
-    max-width: 100%; /* Cambia el ancho máximo a 100% para que ocupe todo el espacio */
-}
-}	    
-
-
-</style>
+        /* Regla CSS para versiones móviles */
+        @media (max-width: 767px) {
+            .container {
+                max-width: 100%; /* Cambia el ancho máximo a 100% para que ocupe todo el espacio */
+                height: 100%; /* Establece la altura al 100% para ocupar toda la pantalla verticalmente */
+                border-radius: 0; /* Remueve el redondeo de bordes para que ocupe toda la pantalla */
+            }
+        }
+    </style>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
