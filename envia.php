@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $to = "zcortes@dentalnetwork.com.mx";
+    $to = "cherrera@dentalnetwork.com.mx";
     $subject = "Haz la prueba de sonrisa";
 
     // Obtener los datos del formulario
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Crear la estructura del mensaje
     $boundary = md5(time());
-    $headers = "From: Prueba sonrisa <zcortes@dentalnetwork.com.mx>\r\n";
+    $headers = "From: Prueba sonrisa <cherrera@dentalnetwork.com.mx>\r\n";
     $headers .= "Reply-To: $email\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
