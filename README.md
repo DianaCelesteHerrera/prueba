@@ -1,1 +1,1 @@
-# prueba
+#Proyecto para la clínica dental
