@@ -138,5 +138,5 @@ var formularioIniciado = false;
 
 
     function mostrarAlerta(){
-      alert("El formulario se envio correctamente");
+      alert("El formulario se envió correctamente");
     }
