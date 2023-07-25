@@ -115,7 +115,7 @@ var formularioIniciado = false;
     "gmail.com",
     "outlook.com",
     "hotmail.com",
-    "yahoo.com",
+    "yahoo.com.mx",
     "aol.com",
     "icloud.com",
     "protonmail.com",
