@@ -70,7 +70,7 @@
                             <div class="form-group">
                                 <label for="name">1) ¿Como te llamas?</label>
                                 <br>
-								<input type="text" id="name" name="name" placeholder="Ingrese su nombre..." oninput="validarNombre()" required>
+								<input type="text" id="name" name="name" placeholder="Ingresa tu nombre..." oninput="validarNombre()" required>
                                 <div id="nombreError" style="color: red;"></div>
                             </div>
                             <button type="button" class="btn btn-primary" onclick="mostrarPregunta('pregunta1', 'pregunta2')">Siguiente</button>
@@ -91,7 +91,7 @@
 
                         <div id="pregunta3" class="d-none" style="font-family:'Montserrat', sans-serif;">
                           <div class="form-group">
-   							 <label for="phone">3) ¿Cuál es su número de teléfono?</label>
+   							 <label for="phone">3) ¿Cuál es tu número de teléfono?</label>
                                 <br>
                                <input type="text" id="phone" name="phone" placeholder="Ejemplo: 1234567890" maxlength="10" oninput="validarTelefono()">
                                <div id="telefonoError" style="color: red;"></div> 
@@ -121,7 +121,7 @@
 
                         <div id="pregunta5" class="d-none" style="font-family: 'Montserrat', sans-serif;">
                             <div class="form-group" oninvalid="mostrarMensaje()" novalidate>
-                                <label for="preocupaciones">5) ¿Cuáles son sus principales preocupaciones?</label>
+                                <label for="preocupaciones">5) ¿Cuáles son tus principales preocupaciones?</label>
                                 <br>
                                 <select class="form-control" id="preocupaciones" name="preocupaciones" required>
                                     <option value="">Selecciona una opción</option>
