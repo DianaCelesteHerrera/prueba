@@ -107,20 +107,39 @@ var formularioIniciado = false;
         }
       }
     
-    
-    function validarEmail() {
-    var email = document.getElementById("email").value.trim();
-    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var errorMensaje = document.getElementById("emailError");
-    
-    if (email === "") {
-      errorMensaje.textContent = "Por favor, ingresa un correo electrónico.";
-    } else if (!regex.test(email)) {
-      errorMensaje.textContent = "Por favor, ingresa un correo electrónico válido.";
+  function validarEmail() {
+  var email = document.getElementById("email").value.trim();
+  var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var errorMensaje = document.getElementById("emailError");
+  var allowedDomains = [
+    "gmail.com",
+    "outlook.com",
+    "hotmail.com",
+    "yahoo.com",
+    "aol.com",
+    "icloud.com",
+    "protonmail.com",
+    "mail.com",
+    "zoho.com",
+    "yandex.com",
+    // Agregar otros dominios populares según sea necesario
+  ];
+
+  if (email === "") {
+    errorMensaje.textContent = "Por favor, ingresa un correo electrónico.";
+  } else if (!regex.test(email)) {
+    errorMensaje.textContent = "Por favor, ingresa un correo electrónico válido.";
+  } else {
+    // Extracting the domain from the email address
+    var domain = email.split("@")[1].toLowerCase();
+    if (!allowedDomains.includes(domain)) {
+      errorMensaje.textContent = "Dominio de correo no permitido.";
     } else {
       errorMensaje.textContent = "";
     }
-    }
+  }
+}
+
     
     function validarTelefono() {
     var telefono = document.getElementById("phone").value.trim();
