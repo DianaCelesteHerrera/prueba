@@ -15,9 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $estoycita = $_POST["estoycita"];
 
     // Procesar la foto adjunta
-    $photo_tmp_name = $_FILES["photo"]["tmp_name"];
-    $photo_type = $_FILES["photo"]["type"];
-    $photo_name = $_FILES["photo"]["name"];
+   // $photo_tmp_name = $_FILES["photo"]["tmp_name"];
+    //$photo_type = $_FILES["photo"]["type"];
+    //$photo_name = $_FILES["photo"]["name"];
 
     // Leer el contenido de la foto
     $photo_content = file_get_contents($photo_tmp_name);
@@ -44,12 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $message .= "\r\n";
     
     // Adjuntar la foto al correo electrónico
-    $message .= "--$boundary\r\n";
-    $message .= "Content-Type: $photo_type; name=\"$photo_name\"\r\n";
-    $message .= "Content-Disposition: attachment; filename=\"$photo_name\"\r\n";
-    $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
-    $message .= chunk_split(base64_encode($photo_content)) . "\r\n";
-    $message .= "--$boundary--";
+   // $message .= "--$boundary\r\n";
+    //$message .= "Content-Type: $photo_type; name=\"$photo_name\"\r\n";
+    //$message .= "Content-Disposition: attachment; filename=\"$photo_name\"\r\n";
+    //$message .= "Content-Transfer-Encoding: base64\r\n\r\n";
+    //$message .= chunk_split(base64_encode($photo_content)) . "\r\n";
+    //$message .= "--$boundary--";
 
     // Enviar el correo electrónico
     if (mail($to, $subject, $message, $headers)) {
