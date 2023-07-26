@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $message .= "Inquietudes: $inquietudes\n";
     $message .= "Agendar cita: $estoycita\n";
     $message .= "\r\n";
-
+    
     // Adjuntar la foto al correo electrónico
     $message .= "--$boundary\r\n";
     $message .= "Content-Type: $photo_type; name=\"$photo_name\"\r\n";
