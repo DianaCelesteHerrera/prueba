@@ -153,7 +153,7 @@ var formularioIniciado = false;
 
 
     function mostrarAlerta(){
-      alert("El formulario se envió correctamente");
+      alert("Cierra este mensaje para recibir tu valoración");
     }
 
    function redirec() {
