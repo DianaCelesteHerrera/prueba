@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     //$photo_name = $_FILES["photo"]["name"];
 
     // Leer el contenido de la foto
-    $photo_content = file_get_contents($photo_tmp_name);
+   // $photo_content = file_get_contents($photo_tmp_name);
 
     // Crear la estructura del mensaje
     $boundary = md5(time());
