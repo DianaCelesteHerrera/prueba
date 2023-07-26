@@ -38,12 +38,7 @@ var formularioIniciado = false;
     document.getElementById('photo').addEventListener('change', previewPhoto);
 
     // Funcion para recargar el formulario
-    const reload = document.getElementById('reload');
-
-    reload.addEventListener('click', _ => {
-        location.reload();
-    });
-
+    
     // Agregar el controlador de eventos al botón de envío
     document.getElementById("btn-enviar").addEventListener("click", function() {
         if (validateForm()) {
