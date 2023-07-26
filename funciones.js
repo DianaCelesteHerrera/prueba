@@ -153,7 +153,7 @@ var formularioIniciado = false;
 
 
     function mostrarAlerta(){
-      alert("Cierra este mensaje para recibir tu valoración");
+      alert("CIERRA este mensaje para recibir tu valoración 📫");
     }
 
    function redirec() {
