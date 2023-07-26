@@ -152,7 +152,7 @@ var formularioIniciado = false;
     }
 
 
-    /*function mostrarAlerta(){
+    function mostrarAlerta(){
       alert("El formulario se envió correctamente");
     }
 
@@ -160,19 +160,9 @@ var formularioIniciado = false;
     setTimeout(function() {
         location.href = 'https://laclinicadental.org/';
     }, 1000); // 4000 milisegundos = 4 segundos
-}*/
-
-
-function mostrarAlerta() {
-    alert("El formulario se envió correctamente");
 }
 
-function redirec() {
-    mostrarAlerta(); // Llama a la función mostrarAlerta()
-    setTimeout(function() {
-        location.href = 'https://laclinicadental.org/';
-    }, 1000); // 1000 milisegundos = 1 segundo
-}
+
 
 
 
