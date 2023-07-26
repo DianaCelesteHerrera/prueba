@@ -72,7 +72,7 @@ var formularioIniciado = false;
         // Realizar la solicitud AJAX
         $.ajax({
             type: 'POST',
-            url: 'ruta_hacia_tu_archivo_php.php', // Reemplaza 'ruta_hacia_tu_archivo_php.php' con la ruta correcta a tu archivo PHP que procesa el formulario y envía el correo.
+            url: 'envia.php', // Reemplaza 'ruta_hacia_tu_archivo_php.php' con la ruta correcta a tu archivo PHP que procesa el formulario y envía el correo.
             data: formData,
             success: function(response) {
                 // Aquí puedes agregar código para mostrar un mensaje de éxito o realizar alguna acción adicional después de enviar el formulario
