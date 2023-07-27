@@ -18,9 +18,34 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $photo_tmp_name = $_FILES["photo"]["tmp_name"];
     $photo_type = $_FILES["photo"]["type"];
     $photo_name = $_FILES["photo"]["name"];
+    $photo_size = $_FILES["photo"]["size"];
 
-    // Leer el contenido de la foto
-    $photo_content = file_get_contents($photo_tmp_name);
+    // Variable de control para adjuntar la foto
+    $attach_photo = true;
+
+    // Verificar si se cargó una foto
+    if (!empty($photo_tmp_name) && is_uploaded_file($photo_tmp_name)) {
+        // Validar el tipo de archivo (permitir JPEG, HEIF y HEVC)
+        $allowed_formats = array("image/jpeg", "image/heif", "image/heic");
+        if (in_array($photo_type, $allowed_formats)) {
+            // Establecer un límite de tamaño máximo para el archivo (en este ejemplo, 10 MB)
+            $max_photo_size = 10 * 1024 * 1024; // 10 MB en bytes
+
+            if ($photo_size <= $max_photo_size) {
+                // Leer el contenido de la foto
+                $photo_content = file_get_contents($photo_tmp_name);
+            } else {
+                echo "Advertencia: El tamaño del archivo es demasiado grande. La foto no se adjuntará al correo.<br>";
+                $attach_photo = false;
+            }
+        } else {
+            echo "Advertencia: Solo se permiten archivos JPEG, HEIF y HEVC. La foto no se adjuntará al correo.<br>";
+            $attach_photo = false;
+        }
+    } else {
+        echo "Advertencia: No se ha seleccionado ninguna foto. La foto no se adjuntará al correo.<br>";
+        $attach_photo = false;
+    }
 
     // Crear la estructura del mensaje
     $boundary = md5(time());
@@ -42,14 +67,16 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $message .= "Inquietudes: $inquietudes\n";
     $message .= "Agendar cita: $estoycita\n";
     $message .= "\r\n";
-    
-    // Adjuntar la foto al correo electrónico
-    $message .= "--$boundary\r\n";
-    $message .= "Content-Type: $photo_type; name=\"$photo_name\"\r\n";
-    $message .= "Content-Disposition: attachment; filename=\"$photo_name\"\r\n";
-    $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
-    $message .= chunk_split(base64_encode($photo_content)) . "\r\n";
-    $message .= "--$boundary--";
+
+    // Adjuntar la foto al correo electrónico si la variable de control lo permite
+    if ($attach_photo) {
+        $message .= "--$boundary\r\n";
+        $message .= "Content-Type: $photo_type; name=\"$photo_name\"\r\n";
+        $message .= "Content-Disposition: attachment; filename=\"$photo_name\"\r\n";
+        $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
+        $message .= chunk_split(base64_encode($photo_content)) . "\r\n";
+        $message .= "--$boundary--";
+    }
 
     // Enviar el correo electrónico
     if (mail($to, $subject, $message, $headers)) {
