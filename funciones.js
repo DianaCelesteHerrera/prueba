@@ -141,7 +141,7 @@ var formularioIniciado = false;
       alert("Cierra el siguiente mensaje para enviarlo");
     }
 
-    function redireccionar() {
+    function redirec() {
             // Reemplaza "URL_DESTINO" con la URL de la página a la que deseas redireccionar
             const urlDestino = "https://laclinicadental.org";
             setTimeout(function() {
