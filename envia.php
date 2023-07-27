@@ -25,21 +25,26 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     // Verificar si se cargó una foto
     if (!empty($photo_tmp_name) && is_uploaded_file($photo_tmp_name)) {
-        // Validar el tipo de archivo (permitir JPEG, HEIF y HEVC)
-        $allowed_formats = array("image/jpeg", "image/heif", "image/heic");
+        // Permitir formatos de imagen comunes
+        $allowed_formats = array(
+            "image/jpeg",
+            "image/png",
+            "image/gif",
+            "image/bmp",
+            "image/webp",
+            "image/heif",
+            "image/heic"
+        );
         if (in_array($photo_type, $allowed_formats)) {
-            // Establecer un límite de tamaño máximo para el archivo (en este ejemplo, 10 MB)
-            $max_photo_size = 10 * 1024 * 1024; // 10 MB en bytes
+            // Establecer un límite de tamaño máximo para el archivo (en este ejemplo, 20 MB)
+            $max_photo_size = 20 * 1024 * 1024; // 20 MB en bytes
 
-            if ($photo_size <= $max_photo_size) {
-                // Leer el contenido de la foto
-                $photo_content = file_get_contents($photo_tmp_name);
-            } else {
+            if ($photo_size > $max_photo_size) {
                 echo "Advertencia: El tamaño del archivo es demasiado grande. La foto no se adjuntará al correo.<br>";
                 $attach_photo = false;
             }
         } else {
-            echo "Advertencia: Solo se permiten archivos JPEG, HEIF y HEVC. La foto no se adjuntará al correo.<br>";
+            echo "Advertencia: Formato de imagen no admitido. La foto no se adjuntará al correo.<br>";
             $attach_photo = false;
         }
     } else {
@@ -74,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $message .= "Content-Type: $photo_type; name=\"$photo_name\"\r\n";
         $message .= "Content-Disposition: attachment; filename=\"$photo_name\"\r\n";
         $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $message .= chunk_split(base64_encode($photo_content)) . "\r\n";
+        $message .= chunk_split(base64_encode(file_get_contents($photo_tmp_name))) . "\r\n";
         $message .= "--$boundary--";
     }
 
@@ -86,4 +91,3 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     }
 }
 ?>
-
