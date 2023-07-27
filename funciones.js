@@ -30,7 +30,7 @@ var formularioIniciado = false;
     }
 
     // Función para previsualizar la foto seleccionada
-  /* function previewPhoto(event) {
+  function previewPhoto(event) {
         var photo = document.getElementById('preview');
         photo.src = URL.createObjectURL(event.target.files[0]);
     }
@@ -138,7 +138,7 @@ var formularioIniciado = false;
     
     function validarTelefono() {
     var telefono = document.getElementById("phone").value.trim();
-    var regex = /^[0-9+\-\s()]+$/;
+    var regex = /^[0-12+\-\s()]+$/;
     var errorMensaje = document.getElementById("telefonoError");
     
     if (telefono === "") {
@@ -158,7 +158,7 @@ var formularioIniciado = false;
    function redirec() {
     setTimeout(function() {
         location.href = 'https://laclinicadental.org/';
-    }, 1000); // 4000 milisegundos = 4 segundos
+    }, 4000); // 4000 milisegundos = 4 segundos
 }
 
 
