@@ -30,16 +30,15 @@ var formularioIniciado = false;
     }
 
     // Función para previsualizar la foto seleccionada
-    function previewPhoto(event) {
+  /* function previewPhoto(event) {
         var photo = document.getElementById('preview');
         photo.src = URL.createObjectURL(event.target.files[0]);
     }
 
     // Asociar la función de previsualización al evento "change" del campo de entrada de foto
-    document.getElementById('photo').addEventListener('change', previewPhoto);
+    document.getElementById('photo').addEventListener('change', previewPhoto);*/
 
-    // Funcion para recargar el formulario
-    
+ 
     // Agregar el controlador de eventos al botón de envío
     document.getElementById("btn-enviar").addEventListener("click", function() {
         if (validateForm()) {
@@ -153,7 +152,7 @@ var formularioIniciado = false;
 
 
     function mostrarAlerta(){
-      alert("🦷 Cierra este mensaje para recibir tu valoración ");
+      alert("Cierra este mensaje para recibir tu valoración 🦷");
     }
 
    function redirec() {
